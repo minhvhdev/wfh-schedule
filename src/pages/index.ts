@@ -1,4 +1,4 @@
 import HomePage from "./HomePage/HomePage";
-import WeeklyPage from "./WeeklyPage/WeeklyPage";
+import WeeklyPage from "./CalendarPage/CalendarPage";
 
 export { HomePage, WeeklyPage };
