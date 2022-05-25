@@ -26,15 +26,10 @@ export function getFirstOrLastDateOfMonth(isFirst: boolean): Date {
   const halfDay = 12 * 60 * 60 * 1000;
   const firstDay = new Date(Number(new Date(year, month, 1)) + halfDay);
   const lastDay = new Date(Number(new Date(year, month + 1, 0)) + halfDay);
-  console.log(firstDay);
-  console.log(lastDay);
-
   return isFirst ? firstDay : lastDay;
 }
 
 export function formatDateInput(date: string | number | Date): string {
-  console.log(new Date(date).toISOString());
-
   return new Date(date).toISOString().split("T")[0];
 }
 

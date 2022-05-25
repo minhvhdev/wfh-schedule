@@ -12,7 +12,7 @@ function App() {
       <Container maxWidth={false}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/weekly" element={<WeeklyPage />} />
+          <Route path="/calendar" element={<WeeklyPage />} />
         </Routes>
       </Container>
     </BrowserRouter>

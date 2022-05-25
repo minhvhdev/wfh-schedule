@@ -21,7 +21,7 @@ const Navbar: FC<NavbarProps> = () => (
         </Link>
         <Link
           component={RouterLink}
-          to="/weekly"
+          to="/calendar"
           underline="none"
           color="primary.contrastText"
           marginLeft="2rem"
