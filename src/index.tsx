@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./app/store";
+import { store } from "./redux/store";
 import App from "./App";
 import theme from "./theme";
 import "@fontsource/josefin-sans";

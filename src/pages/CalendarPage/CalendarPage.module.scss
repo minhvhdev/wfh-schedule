@@ -1,1 +1,6 @@
-.CalendarPage {}
+.CalendarPage {
+    .title {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,25 @@
+.DateFilter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    input {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 14px;
+        background-color: transparent;
+        border: 1px solid black;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+    }
+     ::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+    .icon {
+        cursor: pointer;
+    }
+    .alert {
+        position: absolute;
+        top: 7px;
+        right: 7px
+    }
+}

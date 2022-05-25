@@ -5,15 +5,12 @@ export function sumDate(startDate: number | Date, date: number | Date): number {
   return Number(startDate) + Number(date);
 }
 
-export function getCurrentWeek(): number {
-  const currentDate = new Date();
+export function getCurrentWeek(currentDate: Date): number {
   const oneJan = new Date(currentDate.getFullYear(), 0, 1);
   const numberOfDays = Math.floor(
     (Number(currentDate) - Number(oneJan)) / MILI_OF_DATE
   );
-  const currentWeekOfYear = Math.ceil(
-    (currentDate.getDay() + 1 + numberOfDays) / 7
-  );
+  const currentWeekOfYear = Math.ceil(numberOfDays / 7);
   //Project start at week 21
   return currentWeekOfYear % 3 === RefWeek.Week1
     ? RefWeek.Week1
@@ -22,7 +19,20 @@ export function getCurrentWeek(): number {
     : RefWeek.Week3;
 }
 
-export function isWorkDate(currentDate:number): boolean {
+export function formatDateInput(date: string | number | Date): string {
+  return new Date(date).toISOString().split("T")[0];
+}
+
+export function isCorrectTimeLine(
+  startDate: string | number | Date,
+  endDate: string | number | Date
+): boolean {
+  startDate = Number(new Date(startDate));
+  endDate = Number(new Date(endDate));
+  return endDate >= startDate;
+}
+
+export function isWorkDate(currentDate: number): boolean {
   switch (currentDate) {
     case 0:
     case 6:
@@ -32,11 +42,15 @@ export function isWorkDate(currentDate:number): boolean {
   }
 }
 
-export function isWfh(startDate: number, currentDate: number): boolean {
-  startDate += getCurrentWeek();
+export function isWfh(
+  startDay: number,
+  currentDay: number,
+  currentDate: Date
+): boolean {
+  startDay += getCurrentWeek(currentDate);
   return (
-    startDate === currentDate ||
-    startDate + 3 === currentDate ||
-    startDate - 3 === currentDate
+    startDay === currentDay ||
+    startDay + 3 === currentDay ||
+    startDay - 3 === currentDay
   );
 }

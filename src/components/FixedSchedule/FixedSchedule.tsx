@@ -12,7 +12,7 @@ import { isWfh } from "../../utils";
 
 interface FixedScheduleProps {}
 
-const FixedSchedule: FC<FixedScheduleProps> = () => {  
+const FixedSchedule: FC<FixedScheduleProps> = () => {
   return (
     <div className={styles.FixedSchedule}>
       <TableContainer component={Paper}>
@@ -37,7 +37,9 @@ const FixedSchedule: FC<FixedScheduleProps> = () => {
                   {DAY_OF_WEEK.map((el) => {
                     return (
                       <TableCell key={el.value}>
-                        {isWfh(item.startWfhDate, el.value) ? "x" : null}
+                        {isWfh(item.startWfhDate, el.value, new Date())
+                          ? "x"
+                          : null}
                       </TableCell>
                     );
                   })}
