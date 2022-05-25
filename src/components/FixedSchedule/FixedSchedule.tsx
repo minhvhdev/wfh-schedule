@@ -38,7 +38,7 @@ const FixedSchedule: FC<FixedScheduleProps> = () => {
                     return (
                       <TableCell key={el.value}>
                         {isWfh(item.startWfhDate, el.value, new Date())
-                          ? "x"
+                          ? "X"
                           : null}
                       </TableCell>
                     );

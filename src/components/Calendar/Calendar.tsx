@@ -23,6 +23,8 @@ const Calendar: FC<CalendarProps> = () => {
       sortable: false,
       filterable: false,
       editable: true,
+      flex: duration,
+      minWidth: 100,
     };
   });
 
@@ -31,7 +33,7 @@ const Calendar: FC<CalendarProps> = () => {
     const element = START_DATA[index];
     let row = listDate.reduce((accumulator, date, index) => {
       const key = `day${index}`;
-      const value = isWfh(element.startWfhDate, date.getDay(), date) ? "x" : "";
+      const value = isWfh(element.startWfhDate, date.getDay(), date) ? "X" : "";
       return {
         ...accumulator,
         [key]: value,
@@ -44,8 +46,8 @@ const Calendar: FC<CalendarProps> = () => {
     field: "account",
     headerName: "Account",
     sortable: true,
-    filterable: false,
-    width: 200,
+    filterable: true,
+    width: 150,
   });
 
   function getListDate(): Array<Date> {
@@ -68,6 +70,7 @@ const Calendar: FC<CalendarProps> = () => {
         getRowId={(row) => row.account}
         hideFooter={true}
         pagination={undefined}
+        disableColumnMenu
         components={{
           Toolbar: CustomExport,
         }}

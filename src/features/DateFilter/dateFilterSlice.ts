@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../redux/store";
+import { getFirstOrLastDateOfMonth } from "../../utils";
 
 export interface DateFilterState {
   startDate: Date;
@@ -7,8 +8,8 @@ export interface DateFilterState {
 }
 
 const initialState: DateFilterState = {
-  startDate: new Date(),
-  endDate: new Date(),
+  startDate: getFirstOrLastDateOfMonth(true),
+  endDate: getFirstOrLastDateOfMonth(false),
 };
 
 export const dateFilterSlice = createSlice({

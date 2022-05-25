@@ -22,11 +22,14 @@ const CustomExport: FC<CustomExportProps> = () => {
     <div className={styles.CustomExport}>
       <GridToolbarContainer>
         <Button
-          color="primary"
-          size="small"
-          startIcon={<Icon component={FileDownloadOutlined} />}
+          className={styles.button}
+          variant="contained"
+          color="secondary"
+          endIcon={<Icon component={FileDownloadOutlined} />}
           onClick={() => handleExport()}
-        />
+        >
+          Export
+        </Button>
       </GridToolbarContainer>
     </div>
   );
