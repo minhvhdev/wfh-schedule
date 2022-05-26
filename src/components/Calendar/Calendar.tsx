@@ -22,6 +22,7 @@ const Calendar: FC<CalendarProps> = () => {
       headerName: `${date.getMonth() + 1}/${date.getDate()}`,
       sortable: false,
       filterable: false,
+      disableColumnMenu: true,
       editable: true,
       flex: duration,
       minWidth: 100,
@@ -70,7 +71,6 @@ const Calendar: FC<CalendarProps> = () => {
         getRowId={(row) => row.account}
         hideFooter={true}
         pagination={undefined}
-        disableColumnMenu
         components={{
           Toolbar: CustomExport,
         }}
